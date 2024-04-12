@@ -10,13 +10,19 @@ onErrorCaptured((err, instance, info) => {
 
 <template>
   <header>
-    <nav>
-      <ul>
-        <li>
-          <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
-        </li>
-      </ul>
-    </nav>
+    <button
+    aria-controls="mainNav"
+    aria-expanded="true"
+    class="rounded-full border-2 border-red-600 bg-red-300 px-2">
+    menu
+    </button>
+  <nav id="mainNav">
+    <ul>
+      <li><RouterLink to="/">item 1</RouterLink></li>
+      <li><RouterLink to="/">item 2</RouterLink></li>
+      <li><RouterLink to="/">item 3</RouterLink></li>
+    </ul>
+  </nav>
   </header>
   <RouterView v-slot="{ Component }">
     <Suspense>
